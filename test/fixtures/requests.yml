@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product_name: MyString
+  description: MyText
+  repository_url: MyString
+  is_created: false
+
+two:
+  product_name: MyString
+  description: MyText
+  repository_url: MyString
+  is_created: false
