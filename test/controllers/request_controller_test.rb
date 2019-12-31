@@ -1,6 +1,11 @@
 require 'test_helper'
 
 class RequestControllerTest < ActionDispatch::IntegrationTest
+  test "should get show" do
+    get request_show_url
+    assert_response :success
+  end
+
   test "should get add" do
     get request_add_url
     assert_response :success

@@ -1,4 +1,7 @@
 class RequestController < ApplicationController
+  def show
+  end
+
   def add
   end
 
