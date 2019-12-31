@@ -6,8 +6,8 @@ class RequestControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get chenge" do
-    get request_chenge_url
+  test "should get change" do
+    get request_change_url
     assert_response :success
   end
 
