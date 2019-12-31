@@ -4,7 +4,7 @@ class CreateRequests < ActiveRecord::Migration[5.2]
       t.string :product_name, null: false
       t.text :description
       t.string :repository_url, null: false
-      t.boolean :is_created, default: false, null: false
+      t.boolean :is_completed, default: false, null: false
 
       t.timestamps
     end
