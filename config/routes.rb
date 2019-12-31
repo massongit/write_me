@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'request/show'
+  get 'request/edit'
   get 'request/add'
   get 'request/change'
   get 'request/delete'

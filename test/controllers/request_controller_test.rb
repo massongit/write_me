@@ -6,6 +6,11 @@ class RequestControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should get edit" do
+    get request_edit_url
+    assert_response :success
+  end
+
   test "should get add" do
     get request_add_url
     assert_response :success
