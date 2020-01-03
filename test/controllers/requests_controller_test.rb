@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class RequestControllerTest < ActionDispatch::IntegrationTest
+class RequestsControllerTest < ActionDispatch::IntegrationTest
   test "should get show" do
     get request_show_url
     assert_response :success
