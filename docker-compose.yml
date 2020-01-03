@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+  database:
+    image: postgres:12.1
+    tty: true
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
