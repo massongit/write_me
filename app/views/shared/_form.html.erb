@@ -2,7 +2,6 @@
   <div class="card-header"><%= t("request.#{mode}") %></div>
   <div class="card-body">
     <% form_args = {class: 'form-control', disabled: disabled} %>
-    <% button_args = {class: 'btn btn-primary'} %>
     <%= form_with model: request do |form| %>
       <div class="form-group">
         <%= form.label :product_name, Request.human_attribute_name(:product_name) %>
@@ -20,13 +19,10 @@
         <%= form.label :status, Request.human_attribute_name(:status) %>
         <%= form.select :status, (1..2).map { |id| [t("status.#{id}"), id] }, {}, form_args %>
       </div>
-      <% if mode == 'add' %>
-        <%= form.submit t('action.add'), button_args %>
-      <% elsif mode == 'edit' %>
-        <%= form.submit t('action.update'), button_args %>
-      <% elsif mode == 'details' %>
-        <%= link_to t('action.edit'), edit_request_path(request.id), button_args %>
-        <%= link_to t('action.delete'), request, {method: 'delete', data: {confirm: t('request.confirm_delete', {product_name: request.product_name})}}.merge!(button_args) %>
+      <% if content_for? :button %>
+        <%= yield :button %>
+      <% else %>
+        <%= form.submit submit_text, class: 'btn btn-primary' %>
       <% end %>
     <% end %>
   </div>

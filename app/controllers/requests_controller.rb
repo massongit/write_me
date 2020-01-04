@@ -17,21 +17,24 @@ class RequestsController < ApplicationController
     @request = Request.new
     render template: 'shared/_form',
            layout: 'application',
-           locals: { request: @request, mode: 'add', disabled: false }
+           locals: { request: @request,
+                     mode: 'add',
+                     submit_text: t('action.add'),
+                     disabled: false }
   end
 
   def edit
     @request = Request.find_by!(id: params[:id])
     render template: 'shared/_form',
            layout: 'application',
-           locals: { request: @request, mode: 'edit', disabled: false }
+           locals: { request: @request,
+                     mode: 'edit',
+                     submit_text: t('action.update'),
+                     disabled: false }
   end
 
   def show
     @request = Request.find_by!(id: params[:id])
-    render template: 'shared/_form',
-           layout: 'application',
-           locals: { request: @request, mode: 'details', disabled: true }
   end
 
   def update
