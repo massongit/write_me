@@ -1,5 +1,5 @@
 <div class="card">
-  <div class="card-header"><%= I18n.t("request.#{mode}") %></div>
+  <div class="card-header"><%= t("request.#{mode}") %></div>
   <div class="card-body">
     <% form_args = {class: 'form-control', disabled: disabled} %>
     <% button_args = {class: 'btn btn-primary'} %>
@@ -18,15 +18,15 @@
       </div>
       <div class="form-group">
         <%= form.label :status, Request.human_attribute_name(:status) %>
-        <%= form.select :status, (1..2).map { |id| [I18n.t("status.#{id}"), id] }, {}, form_args %>
+        <%= form.select :status, (1..2).map { |id| [t("status.#{id}"), id] }, {}, form_args %>
       </div>
       <% if mode == 'add' %>
-        <%= form.submit I18n.t('action.add'), button_args %>
+        <%= form.submit t('action.add'), button_args %>
       <% elsif mode == 'edit' %>
-        <%= form.submit I18n.t('action.update'), button_args %>
+        <%= form.submit t('action.update'), button_args %>
       <% elsif mode == 'details' %>
-        <%= link_to I18n.t('action.edit'), edit_request_path(request.id), button_args %>
-        <%= link_to I18n.t('action.delete'), request, {method: 'delete', data: {confirm: I18n.t('request.confirm_delete', {product_name: request.product_name})}}.merge!(button_args) %>
+        <%= link_to t('action.edit'), edit_request_path(request.id), button_args %>
+        <%= link_to t('action.delete'), request, {method: 'delete', data: {confirm: t('request.confirm_delete', {product_name: request.product_name})}}.merge!(button_args) %>
       <% end %>
     <% end %>
   </div>

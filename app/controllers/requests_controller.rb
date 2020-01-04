@@ -10,7 +10,7 @@ class RequestsController < ApplicationController
   def create
     @request = Request.new(request_params)
     @request.save!
-    redirect_to '/requests', success: I18n.t('request.added')
+    redirect_to '/requests', success: t('request.added')
   end
 
   def new
@@ -37,13 +37,13 @@ class RequestsController < ApplicationController
   def update
     @request = Request.find_by!(id: params[:id])
     @request.update!(request_params)
-    redirect_to '/requests', notice: I18n.t('request.updated')
+    redirect_to '/requests', notice: t('request.updated')
   end
 
   def destroy
     @request = Request.find_by!(id: params[:id])
     @request.destroy!
-    redirect_to '/requests', notice: I18n.t('request.deleted')
+    redirect_to '/requests', notice: t('request.deleted')
   end
 
   def request_params

@@ -1,7 +1,7 @@
 <div class="card">
-  <div class="card-header"><%= I18n.t('request.list') %></div>
+  <div class="card-header"><%= t('request.list') %></div>
   <div class="card-body">
-    <%= link_to I18n.t('action.add'), new_request_path, class: 'btn btn-primary' %>
+    <%= link_to t('action.add'), new_request_path, class: 'btn btn-primary' %>
   </div>
   <% if 0 < @requests.count %>
     <table class="table">
@@ -17,12 +17,12 @@
       <tbody>
       <% @requests.each do |request| %>
         <tr>
-          <td><%= I18n.t("status.#{request.status}") %></td>
+          <td><%= t("status.#{request.status}") %></td>
           <td><%= request.product_name %></td>
           <td><%= request.repository_url %></td>
           <td><%= request.description %></td>
           <td>
-            <%= link_to I18n.t('action.details'), request_path(request.id), class: 'btn btn-primary' %>
+            <%= link_to t('action.details'), request_path(request.id), class: 'btn btn-primary' %>
           </td>
         </tr>
       <% end %>
