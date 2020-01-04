@@ -60,3 +60,5 @@ en:
     updated: The request was updated.
     deleted: The request was deleted.
     confirm_delete: Are you sure you want to delete request of %{product_name}?
+  jumbotron:
+    lead_html: \"I want to commit to OSS, but I don't know where to start ...\"<br/>Let's start by writing the OSS README!

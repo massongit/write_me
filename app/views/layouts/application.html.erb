@@ -17,10 +17,7 @@
 <div class="container">
   <div class="jumbotron">
     <h1 class="display-4">Write Please!</h1>
-    <p class="lead">
-      「OSSにコミットしてみたいけど、どこから始めればよいかわからない......」<br/>
-      そんな人はまずOSSのREADMEを記述するところから始めてみましょう！
-    </p>
+    <p class="lead"><%= t('jumbotron.lead_html') %></p>
   </div>
   <% flash.each do |type, message| %>
     <% type = case type
