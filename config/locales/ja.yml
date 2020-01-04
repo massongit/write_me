@@ -29,34 +29,34 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
+ja:
   activerecord:
     models:
-      request: Request
+      request: 募集
     attributes:
       request:
-        product_name: Product name
-        repository_url: Repository URL
-        description: Description
-        status: Status
+        product_name: プロダクト名
+        repository_url: リポジトリのURL
+        description: 概要
+        status: 状態
   attributes:
-    created_at: Created at
-    updated_at: Updated at
+    created_at: 作成日時
+    updated_at: 更新日時
   status:
-    1: Wanted
-    2: Complated
+    1: 募集中
+    2: 完了
   action:
-    add: Add
-    details: Details
-    edit: Edit
-    update: Update
-    delete: Delete
+    add: 追加
+    details: 詳細
+    edit: 編集
+    update: 更新
+    delete: 削除
   request:
-    list: Request list
-    add: Add request
-    edit: Edit request
-    details: Request details
-    added: The request was added.
-    updated: The request was updated.
-    deleted: The request was deleted.
-    confirm_delete: Are you sure you want to delete request of %{product_name}?
+    list: 募集一覧
+    add: 募集追加
+    edit: 募集編集
+    details: 募集詳細
+    added: 募集を追加しました。
+    updated: 募集内容を更新しました。
+    deleted: 募集を削除しました。
+    confirm_delete: 本当に%{product_name}の募集を削除しますか？

@@ -1,16 +1,54 @@
+# frozen_string_literal: true
+
 class RequestsController < ApplicationController
-  def show
+  add_flash_types :success, :info, :warning, :danger
+
+  def index
+    @requests = Request.order(:status).order(created_at: :desc).all
+  end
+
+  def create
+    @request = Request.new(request_params)
+    @request.save!
+    redirect_to '/requests', success: I18n.t('request.added')
+  end
+
+  def new
+    @request = Request.new
+    render template: 'shared/_form',
+           layout: 'application',
+           locals: { request: @request, mode: 'add', disabled: false }
   end
 
   def edit
+    @request = Request.find_by!(id: params[:id])
+    render template: 'shared/_form',
+           layout: 'application',
+           locals: { request: @request, mode: 'edit', disabled: false }
   end
 
-  def add
+  def show
+    @request = Request.find_by!(id: params[:id])
+    render template: 'shared/_form',
+           layout: 'application',
+           locals: { request: @request, mode: 'details', disabled: true }
   end
 
-  def change
+  def update
+    @request = Request.find_by!(id: params[:id])
+    @request.update!(request_params)
+    redirect_to '/requests', notice: I18n.t('request.updated')
   end
 
-  def delete
+  def destroy
+    @request = Request.find_by!(id: params[:id])
+    @request.destroy!
+    redirect_to '/requests', notice: I18n.t('request.deleted')
+  end
+
+  def request_params
+    params
+      .require(:request)
+      .permit(:product_name, :description, :repository_url, :status)
   end
 end
