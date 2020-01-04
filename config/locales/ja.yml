@@ -61,4 +61,5 @@ ja:
     deleted: 募集を削除しました。
     confirm_delete: 本当に%{product_name}の募集を削除しますか？
   jumbotron:
+    title: Write Please!
     lead_html: 「OSSにコミットしてみたいけど、どこから始めればよいかわからない......」<br/>そんな人はまずOSSのREADMEを記述するところから始めてみましょう！
