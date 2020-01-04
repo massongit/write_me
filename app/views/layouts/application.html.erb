@@ -14,6 +14,28 @@
 </head>
 
 <body>
-<%= yield %>
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-4">Write Please!</h1>
+    <p class="lead">
+      「OSSにコミットしてみたいけど、どこから始めればよいかわからない......」<br/>
+      そんな人はまずOSSのREADMEを記述するところから始めてみましょう！
+    </p>
+  </div>
+  <% flash.each do |type, message| %>
+    <% type = case type
+              when 'success', 'info', 'warning', 'danger'
+                type
+              when 'alert'
+                'danger'
+              else
+                'info'
+              end %>
+    <div class="alert alert-<%= type %>">
+      <%= message %>
+    </div>
+  <% end %>
+  <%= yield %>
+</div>
 </body>
 </html>
