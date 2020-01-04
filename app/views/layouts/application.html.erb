@@ -16,7 +16,7 @@
 <body>
 <div class="container">
   <div class="jumbotron">
-    <h1 class="display-4"><%= t('common.title') %></h1>
+    <h1 class="display-4"><%= link_to_unless_current t('common.title'), requests_path %></h1>
     <p class="lead"><%= t('common.lead_html') %></p>
   </div>
   <% flash.each do |type, message| %>
