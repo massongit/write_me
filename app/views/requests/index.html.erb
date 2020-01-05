@@ -10,6 +10,7 @@
         <th><%= Request.human_attribute_name(:status) %></th>
         <th><%= Request.human_attribute_name(:product_name) %></th>
         <th><%= Request.human_attribute_name(:repository_url) %></th>
+        <th><%= Request.human_attribute_name(:updated_at) %></th>
         <th></th>
       </tr>
       </thead>
@@ -19,6 +20,7 @@
           <td><%= t("status.#{request.status}") %></td>
           <td><%= request.product_name %></td>
           <td><%= request.repository_url %></td>
+          <td><%= l(request.updated_at) %></td>
           <td>
             <%= link_to t('action.details'), request_path(request.id), class: 'btn btn-primary' %>
           </td>
