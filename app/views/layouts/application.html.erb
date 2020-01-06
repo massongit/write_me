@@ -20,15 +20,14 @@
     <p class="lead"><%= t('common.lead_html') %></p>
   </div>
   <% flash.each do |type, message| %>
-    <% type = case type
-              when 'success', 'info', 'warning', 'danger'
-                type
-              when 'alert'
-                'danger'
-              else
-                'info'
-              end %>
-    <div class="alert alert-<%= type %>">
+    <div class="alert alert-<%= case type
+                                when 'success', 'info', 'warning', 'danger'
+                                  type
+                                when 'alert'
+                                  'danger'
+                                else
+                                  'info'
+                                end %>">
       <%= message %>
     </div>
   <% end %>
