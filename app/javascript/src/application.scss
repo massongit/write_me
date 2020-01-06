@@ -1,2 +1,13 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
+
+.jumbotron h1 a {
+  color: initial;
+}
+
+.table {
+  th, td {
+    vertical-align: middle;
+    text-align: center;
+  }
+}
