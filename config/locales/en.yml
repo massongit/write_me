@@ -64,4 +64,4 @@ en:
     confirm_delete: Are you sure you want to delete request of %{product_name}?
   common:
     title: Write Please!
-    lead_html: \"I want to commit to OSS. But I don't know how to start ...\"<br/>If you think that, let's start from writing the README of OSS!
+    lead_html: '"I want to commit to OSS. But I don''t know how to start ..."<br/>If you think that, let''s start from writing the README of OSS!'
