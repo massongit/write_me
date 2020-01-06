@@ -16,7 +16,11 @@
       </thead>
       <tbody>
       <% @requests.each do |request| %>
-        <tr>
+        <tr class="<%= if request.status == 'complated'
+                         'text-muted'
+                       else
+                         ''
+                       end %>">
           <td><%= request.status_i18n %></td>
           <td><%= request.product_name %></td>
           <td><%= request.repository_url %></td>
@@ -30,4 +34,3 @@
     </table>
   <% end %>
 </div>
-
