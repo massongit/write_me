@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2019_12_30_111732) do
     t.string "product_name", null: false
     t.text "description"
     t.string "repository_url", null: false
-    t.integer "status", default: 1, null: false
+    t.integer "status", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

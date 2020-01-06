@@ -42,9 +42,11 @@ en:
   attributes:
     created_at: Created at
     updated_at: Updated at
-  status:
-    1: Wanted
-    2: Complated
+  enums:
+    request:
+      status:
+        wanted: Wanted
+        complated: Complated
   action:
     add: Add
     details: Details

@@ -17,7 +17,7 @@
       <tbody>
       <% @requests.each do |request| %>
         <tr>
-          <td><%= t("status.#{request.status}") %></td>
+          <td><%= request.status_i18n %></td>
           <td><%= request.product_name %></td>
           <td><%= request.repository_url %></td>
           <td><%= l(request.updated_at) %></td>

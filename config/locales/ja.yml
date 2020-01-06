@@ -42,9 +42,11 @@ ja:
   attributes:
     created_at: 作成日時
     updated_at: 更新日時
-  status:
-    1: 募集中
-    2: 完了
+  enums:
+    request:
+      status:
+        wanted: 募集中
+        complated: 完了
   action:
     add: 追加
     details: 詳細
