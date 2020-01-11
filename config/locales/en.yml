@@ -52,7 +52,6 @@ en:
       title: Write Please!
       lead_html: '"I want to commit to OSS. But I don''t know how to start ..."<br/>If you think that, let''s start from writing the README of OSS!'
       lang: English
-      other_languages: Other languages
   requests:
     index:
       title: Request list

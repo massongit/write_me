@@ -15,8 +15,19 @@
 
 <body>
 <div class="container">
+  <nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top">
+    <%= link_to t('.title'), requests_path, class: 'navbar-brand' %>
+    <div class="collapse navbar-collapse justify-content-end">
+      <% I18n.available_locales.each do |lang| %>
+        <%= link_to_if I18n.locale != lang,
+                       t('.lang', locale: lang),
+                       url_for(controller: controller.controller_name, action: controller.action_name, locale: lang.to_s),
+                       class: 'btn btn-link' %>
+      <% end %>
+    </div>
+  </nav>
   <div class="jumbotron">
-    <h1 class="display-4"><%= link_to_unless_current t('.title'), requests_path %></h1>
+    <h1 class="display-4"><%= t('.title') %></h1>
     <p class="lead"><%= t('.lead_html') %></p>
   </div>
   <% flash.each do |type, message| %>
@@ -32,16 +43,6 @@
     </div>
   <% end %>
   <%= yield %>
-  <div class="card mt-4">
-    <div class="card-header"><%= t('.other_languages') %></div>
-    <div class="card-body">
-      <% I18n.available_locales.each do |lang| %>
-        <%= link_to_if I18n.locale != lang,
-                       t('.lang', locale: lang),
-                       url_for(controller: controller.controller_name, action: controller.action_name, locale: lang.to_s) %>
-      <% end %>
-    </div>
-  </div>
 </div>
 </body>
 </html>

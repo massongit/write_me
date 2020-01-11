@@ -52,7 +52,6 @@ ja:
       title: Write Please!
       lead_html: 「OSSにコミットしてみたいけど、どこから始めればよいかわからない......」<br/>そんな人はまずOSSのREADMEを記述するところから始めてみましょう！
       lang: 日本語
-      other_languages: 他の言語
   requests:
     index:
       title: 募集一覧
