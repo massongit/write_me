@@ -55,22 +55,22 @@ ja:
       other_languages: 他の言語
   requests:
     index:
-      list: 募集一覧
+      title: 募集一覧
       add: 追加
       details: 詳細
     create:
-      added: 募集を追加しました。
+      success_message: 募集を追加しました。
     new:
-      add: 募集追加
+      title: 募集追加
     edit:
-      edit: 募集編集
+      title: 募集編集
       update: 更新
     show:
+      title: 募集詳細
       edit: 編集
       delete: 削除
-      confirm_delete: 本当に%{product_name}の募集を削除しますか？
-      details: 募集詳細
+      confirm_delete_message: 本当に%{product_name}の募集を削除しますか？
     update:
-      updated: 募集内容を更新しました。
+      success_message: 募集内容を更新しました。
     destroy:
-      deleted: 募集を削除しました。
+      success_message: 募集を削除しました。

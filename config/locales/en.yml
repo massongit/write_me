@@ -55,22 +55,22 @@ en:
       other_languages: Other languages
   requests:
     index:
-      list: Request list
+      title: Request list
       add: Add
       details: Details
     create:
-      added: The request was added.
+      success_message: The request was added.
     new:
-      add: Add request
+      title: Add request
     edit:
-      edit: Edit request
+      title: Edit request
       update: Update
     show:
+      title: Request details
       edit: Edit
       delete: Delete
-      confirm_delete: Are you sure you want to delete request of %{product_name}?
-      details: Request details
+      confirm_delete_message: Are you sure you want to delete request of %{product_name}?
     update:
-      updated: The request was updated.
+      success_message: The request was updated.
     destroy:
-      deleted: The request was deleted.
+      success_message: The request was deleted.

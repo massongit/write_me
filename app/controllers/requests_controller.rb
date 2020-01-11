@@ -10,7 +10,7 @@ class RequestsController < ApplicationController
   def create
     @request = Request.new(request_params)
     @request.save!
-    redirect_to '/requests', success: t('.added')
+    redirect_to '/requests', success: t('.success_message')
   end
 
   def new
@@ -18,7 +18,7 @@ class RequestsController < ApplicationController
     render template: 'shared/_form',
            layout: 'application',
            locals: { request: @request,
-                     title: t('.add'),
+                     title: t('.title'),
                      submit_text: t('requests.index.add'),
                      disabled: false }
   end
@@ -28,7 +28,7 @@ class RequestsController < ApplicationController
     render template: 'shared/_form',
            layout: 'application',
            locals: { request: @request,
-                     title: t('.edit'),
+                     title: t('.title'),
                      submit_text: t('.update'),
                      disabled: false }
   end
@@ -40,13 +40,13 @@ class RequestsController < ApplicationController
   def update
     @request = Request.find_by!(id: params[:id])
     @request.update!(request_params)
-    redirect_to '/requests', notice: t('.updated')
+    redirect_to '/requests', notice: t('.success_message')
   end
 
   def destroy
     @request = Request.find_by!(id: params[:id])
     @request.destroy!
-    redirect_to '/requests', notice: t('.deleted')
+    redirect_to '/requests', notice: t('.success_message')
   end
 
   def request_params
