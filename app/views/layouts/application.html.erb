@@ -26,10 +26,6 @@
       <% end %>
     </div>
   </nav>
-  <div class="jumbotron">
-    <h1 class="display-4"><%= t('.title') %></h1>
-    <p class="lead"><%= t('.lead_html') %></p>
-  </div>
   <% flash.each do |type, message| %>
     <div class="alert alert-<%= case type
                                 when 'success', 'info', 'warning', 'danger'
@@ -38,7 +34,7 @@
                                   'danger'
                                 else
                                   'info'
-                                end %>">
+                                end %> mt-4">
       <%= message %>
     </div>
   <% end %>

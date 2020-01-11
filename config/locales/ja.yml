@@ -50,10 +50,10 @@ ja:
   layouts:
     application:
       title: Write Please!
-      lead_html: 「OSSにコミットしてみたいけど、どこから始めればよいかわからない......」<br/>そんな人はまずOSSのREADMEを記述するところから始めてみましょう！
       lang: 日本語
   requests:
     index:
+      lead_html: 「OSSにコミットしてみたいけど、どこから始めればよいかわからない......」<br/>そんな人はまずOSSのREADMEを記述するところから始めてみましょう！
       title: 募集一覧
       details: 詳細
     create:
