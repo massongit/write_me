@@ -3,7 +3,7 @@
   <div class="card-body">
     <% form_args = {class: 'form-control', disabled: disabled} %>
     <%= form_with model: request do |form| %>
-      <% [:product_name, :repository_url, :description, :status].each do |column| %>
+      <% [:product_name, :repository_url, :description, :status, :updated_at].each do |column| %>
         <div class="form-group">
           <%= form.label column, Request.human_attribute_name(column) %>
           <% case column %>
@@ -11,6 +11,10 @@
             <%= form.text_area column, form_args %>
           <% when :status %>
             <%= form.select column, Request.statuses_i18n.invert, {}, form_args %>
+          <% when :updated_at %>
+            <% form_args_updated_at = form_args.deep_dup
+               form_args_updated_at[:disabled] = true %>
+            <div id="updated_at"><%= form.datetime_select column, {}, form_args_updated_at %></div>
           <% else %>
             <%= form.text_field column, form_args %>
           <% end %>
