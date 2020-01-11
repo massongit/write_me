@@ -1,7 +1,7 @@
 <div class="card mt-4">
-  <div class="card-header"><%= t('request.list') %></div>
+  <div class="card-header"><%= t('.list') %></div>
   <div class="card-body">
-    <%= link_to t('action.add'), new_request_path, class: 'btn btn-primary' %>
+    <%= link_to t('.add'), new_request_path, class: 'btn btn-primary' %>
   </div>
   <% if 0 < @requests.count %>
     <table class="table">
@@ -26,7 +26,7 @@
           <td><%= request.repository_url %></td>
           <td><%= l(request.updated_at) %></td>
           <td>
-            <%= link_to t('action.details'), request_path(request.id), class: 'btn btn-primary' %>
+            <%= link_to t('.details'), request_path(request.id), class: 'btn btn-primary' %>
           </td>
         </tr>
       <% end %>

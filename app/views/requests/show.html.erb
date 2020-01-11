@@ -1,5 +1,5 @@
 <% content_for :button do %>
-  <%= link_to t('action.edit'), edit_request_path(@request.id), class: 'btn btn-primary' %>
-  <%= link_to t('action.delete'), @request, method: 'delete', data: {confirm: t('request.confirm_delete', {product_name: @request.product_name})}, class: 'btn btn-primary' %>
+  <%= link_to t('.edit'), edit_request_path(@request.id), class: 'btn btn-primary' %>
+  <%= link_to t('.delete'), @request, method: 'delete', data: {confirm: t('.confirm_delete', {product_name: @request.product_name})}, class: 'btn btn-primary' %>
 <% end %>
-<%= render 'shared/form', request: @request, mode: 'details', disabled: true %>
+<%= render 'shared/form', request: @request, title: t('.details'), disabled: true %>

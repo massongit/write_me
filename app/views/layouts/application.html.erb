@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="<%= I18n.locale %>">
 <head>
-  <title><%= t('common.title') %></title>
+  <title><%= t('.title') %></title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <%= csrf_meta_tags %>
@@ -16,8 +16,8 @@
 <body>
 <div class="container">
   <div class="jumbotron">
-    <h1 class="display-4"><%= link_to_unless_current t('common.title'), requests_path %></h1>
-    <p class="lead"><%= t('common.lead_html') %></p>
+    <h1 class="display-4"><%= link_to_unless_current t('.title'), requests_path %></h1>
+    <p class="lead"><%= t('.lead_html') %></p>
   </div>
   <% flash.each do |type, message| %>
     <div class="alert alert-<%= case type
@@ -33,11 +33,11 @@
   <% end %>
   <%= yield %>
   <div class="card mt-4">
-    <div class="card-header"><%= t('common.other_languages') %></div>
+    <div class="card-header"><%= t('.other_languages') %></div>
     <div class="card-body">
       <% I18n.available_locales.each do |lang| %>
         <%= link_to_if I18n.locale != lang,
-                       t('common.lang', locale: lang),
+                       t('.lang', locale: lang),
                        url_for(controller: controller.controller_name, action: controller.action_name, locale: lang.to_s) %>
       <% end %>
     </div>

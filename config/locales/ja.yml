@@ -47,23 +47,30 @@ ja:
       status:
         wanted: 募集中
         complated: 完了
-  action:
-    add: 追加
-    details: 詳細
-    edit: 編集
-    update: 更新
-    delete: 削除
-  request:
-    list: 募集一覧
-    add: 募集追加
-    edit: 募集編集
-    details: 募集詳細
-    added: 募集を追加しました。
-    updated: 募集内容を更新しました。
-    deleted: 募集を削除しました。
-    confirm_delete: 本当に%{product_name}の募集を削除しますか？
-  common:
-    title: Write Please!
-    lead_html: 「OSSにコミットしてみたいけど、どこから始めればよいかわからない......」<br/>そんな人はまずOSSのREADMEを記述するところから始めてみましょう！
-    lang: 日本語
-    other_languages: 他の言語
+  layouts:
+    application:
+      title: Write Please!
+      lead_html: 「OSSにコミットしてみたいけど、どこから始めればよいかわからない......」<br/>そんな人はまずOSSのREADMEを記述するところから始めてみましょう！
+      lang: 日本語
+      other_languages: 他の言語
+  requests:
+    index:
+      list: 募集一覧
+      add: 追加
+      details: 詳細
+    create:
+      added: 募集を追加しました。
+    new:
+      add: 募集追加
+    edit:
+      edit: 募集編集
+      update: 更新
+    show:
+      edit: 編集
+      delete: 削除
+      confirm_delete: 本当に%{product_name}の募集を削除しますか？
+      details: 募集詳細
+    update:
+      updated: 募集内容を更新しました。
+    destroy:
+      deleted: 募集を削除しました。

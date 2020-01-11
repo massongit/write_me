@@ -47,23 +47,30 @@ en:
       status:
         wanted: Wanted
         complated: Complated
-  action:
-    add: Add
-    details: Details
-    edit: Edit
-    update: Update
-    delete: Delete
-  request:
-    list: Request list
-    add: Add request
-    edit: Edit request
-    details: Request details
-    added: The request was added.
-    updated: The request was updated.
-    deleted: The request was deleted.
-    confirm_delete: Are you sure you want to delete request of %{product_name}?
-  common:
-    title: Write Please!
-    lead_html: '"I want to commit to OSS. But I don''t know how to start ..."<br/>If you think that, let''s start from writing the README of OSS!'
-    lang: English
-    other_languages: Other languages
+  layouts:
+    application:
+      title: Write Please!
+      lead_html: '"I want to commit to OSS. But I don''t know how to start ..."<br/>If you think that, let''s start from writing the README of OSS!'
+      lang: English
+      other_languages: Other languages
+  requests:
+    index:
+      list: Request list
+      add: Add
+      details: Details
+    create:
+      added: The request was added.
+    new:
+      add: Add request
+    edit:
+      edit: Edit request
+      update: Update
+    show:
+      edit: Edit
+      delete: Delete
+      confirm_delete: Are you sure you want to delete request of %{product_name}?
+      details: Request details
+    update:
+      updated: The request was updated.
+    destroy:
+      deleted: The request was deleted.
