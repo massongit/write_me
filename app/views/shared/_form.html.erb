@@ -3,22 +3,19 @@
   <div class="card-body">
     <% form_args = {class: 'form-control', disabled: disabled} %>
     <%= form_with model: request do |form| %>
-      <div class="form-group">
-        <%= form.label :product_name, Request.human_attribute_name(:product_name) %>
-        <%= form.text_field :product_name, form_args %>
-      </div>
-      <div class="form-group">
-        <%= form.label :repository_url, Request.human_attribute_name(:repository_url) %>
-        <%= form.text_field :repository_url, form_args %>
-      </div>
-      <div class="form-group">
-        <%= form.label :description, Request.human_attribute_name(:description) %>
-        <%= form.text_area :description, form_args %>
-      </div>
-      <div class="form-group">
-        <%= form.label :status, Request.human_attribute_name(:status) %>
-        <%= form.select :status, Request.statuses_i18n.invert, {}, form_args %>
-      </div>
+      <% [:product_name, :repository_url, :description, :status].each do |column| %>
+        <div class="form-group">
+          <%= form.label column, Request.human_attribute_name(column) %>
+          <% case column %>
+          <% when :description %>
+            <%= form.text_area column, form_args %>
+          <% when :status %>
+            <%= form.select column, Request.statuses_i18n.invert, {}, form_args %>
+          <% else %>
+            <%= form.text_field column, form_args %>
+          <% end %>
+        </div>
+      <% end %>
       <% if content_for? :button %>
         <%= yield :button %>
       <% else %>
