@@ -18,12 +18,26 @@
   <nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top">
     <div class="navbar-brand"><%= link_to_unless_current t('.title'), requests_path %></div>
     <div class="collapse navbar-collapse justify-content-end">
-      <% I18n.available_locales.each do |lang| %>
-        <%= link_to_if I18n.locale != lang,
-                       t('.lang', locale: lang),
-                       url_for(controller: controller.controller_name, action: controller.action_name, locale: lang.to_s),
-                       class: 'btn btn-link' %>
-      <% end %>
+      <ul class="navbar-nav">
+        <% I18n.available_locales.each do |lang| %>
+          <li class="nav-item">
+            <% link_classes = ['nav-link']
+               html_options = {}
+
+               if I18n.locale == lang
+                 link_classes << 'disabled'
+                 html_options.merge!({tabindex: -1, 'aria-disabled': true})
+               else
+                 link_classes << 'active'
+               end
+
+               html_options[:class] = link_classes.join ' ' %>
+            <%= link_to t('.lang', locale: lang),
+                        url_for(controller: controller.controller_name, action: controller.action_name, locale: lang.to_s),
+                        html_options %>
+          </li>
+        <% end %>
+      </ul>
     </div>
   </nav>
   <% flash.each do |type, message| %>
