@@ -56,12 +56,12 @@ ja:
   requests:
     index:
       title: 募集一覧
-      add: 追加
       details: 詳細
     create:
       success_message: 募集を追加しました。
     new:
       title: 募集追加
+      add: 追加
     edit:
       title: 募集編集
       update: 更新

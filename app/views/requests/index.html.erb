@@ -1,7 +1,7 @@
 <div class="card mt-4">
   <div class="card-header"><%= t('.title') %></div>
   <div class="card-body">
-    <%= link_to t('.add'), new_request_path, class: 'btn btn-primary' %>
+    <%= link_to t('requests.new.add'), new_request_path, class: 'btn btn-primary' %>
   </div>
   <% if 0 < @requests.count %>
     <table class="table">

@@ -56,12 +56,12 @@ en:
   requests:
     index:
       title: Request list
-      add: Add
       details: Details
     create:
       success_message: The request was added.
     new:
       title: Add request
+      add: Add
     edit:
       title: Edit request
       update: Update

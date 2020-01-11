@@ -19,7 +19,7 @@ class RequestsController < ApplicationController
            layout: 'application',
            locals: { request: @request,
                      title: t('.title'),
-                     submit_text: t('requests.index.add'),
+                     submit_text: t('.add'),
                      disabled: false }
   end
 
