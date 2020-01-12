@@ -27,9 +27,7 @@
           <td><%= request.status_i18n %></td>
           <td><%= request.product_name %></td>
           <td>
-            <%= link_to *2.times.map do |_| %>
-              <% request.repository_url %>
-            <% end %>
+            <%= link_to *2.times.map { |_| request.repository_url } %>
           </td>
           <td><%= l(request.updated_at) %></td>
           <td>
