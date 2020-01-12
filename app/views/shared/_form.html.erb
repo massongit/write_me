@@ -1,7 +1,9 @@
 <div class="card mt-4">
   <div class="card-header"><%= title %></div>
   <div class="card-body">
-    <% form_args = {class: 'form-control', disabled: disabled} %>
+    <% form_args_ = {class: 'form-control'}
+       form_args = form_args_.deep_dup
+       form_args[:readonly] = disabled %>
     <% columns = [:product_name, :repository_url, :description, :status]
        columns << :updated_at if show_updated_at %>
     <%= form_with model: request do |form| %>
@@ -14,7 +16,7 @@
           <% when :description %>
             <%= form.text_area column, form_args %>
           <% when :status %>
-            <%= form.select column, Request.statuses_i18n.invert, {}, form_args %>
+            <%= form.select column, Request.statuses_i18n.invert, {}, {disabled: disabled}.merge(form_args_) %>
           <% when :updated_at %>
             <%= form.text_field column, {value: l(request.updated_at)}.merge(form_args) %>
           <% else %>
