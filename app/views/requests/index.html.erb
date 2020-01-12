@@ -29,9 +29,7 @@
           <td><%= request.product_name %></td>
           <td><%= link_to *2.times.map { |_| request.repository_url }, class: cell_class %></td>
           <td><%= l(request.updated_at) %></td>
-          <td>
-            <%= link_to t('.details'), request_path(request.id), class: 'btn btn-primary' %>
-          </td>
+          <td><%= link_to t('.details'), request_path(request.id), class: 'btn btn-primary' %></td>
         </tr>
       <% end %>
       </tbody>
