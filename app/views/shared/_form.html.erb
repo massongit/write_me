@@ -7,6 +7,8 @@
         <div class="form-group">
           <%= form.label column, Request.human_attribute_name(column) %>
           <% case column %>
+          <% when :repository_url %>
+            <%= form.url_field column, form_args %>
           <% when :description %>
             <%= form.text_area column, form_args %>
           <% when :status %>
