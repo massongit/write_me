@@ -20,7 +20,8 @@ class RequestsController < ApplicationController
            locals: { request: @request,
                      title: t('.title'),
                      submit_text: t('.add'),
-                     disabled: false }
+                     disabled: false,
+                     show_updated_at: false }
   end
 
   def edit
@@ -30,7 +31,8 @@ class RequestsController < ApplicationController
            locals: { request: @request,
                      title: t('.title'),
                      submit_text: t('.update'),
-                     disabled: false }
+                     disabled: false,
+                     show_updated_at: false }
   end
 
   def show

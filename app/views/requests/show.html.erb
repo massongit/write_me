@@ -2,4 +2,4 @@
   <%= link_to t('.edit'), edit_request_path(@request.id), class: 'btn btn-primary' %>
   <%= link_to t('.delete'), @request, method: 'delete', data: {confirm: t('.confirm_delete_message', {product_name: @request.product_name})}, class: 'btn btn-primary' %>
 <% end %>
-<%= render 'shared/form', request: @request, title: t('.title'), disabled: true %>
+<%= render 'shared/form', request: @request, title: t('.title'), disabled: true, show_updated_at: true %>
