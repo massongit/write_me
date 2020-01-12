@@ -10,11 +10,10 @@
     <table class="table table-striped">
       <thead>
       <tr>
-        <th><%= Request.human_attribute_name(:status) %></th>
-        <th><%= Request.human_attribute_name(:product_name) %></th>
-        <th><%= Request.human_attribute_name(:repository_url) %></th>
-        <th><%= Request.human_attribute_name(:updated_at) %></th>
-        <th></th>
+        <% columns = [:status, :product_name, :repository_url, :updated_at].map { |c| Request.human_attribute_name(c) } + [nil] %>
+        <% columns.each do |column| %>
+          <th><%= column %></th>
+        <% end %>
       </tr>
       </thead>
       <tbody>
