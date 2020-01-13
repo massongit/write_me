@@ -10,5 +10,11 @@
   "repository": "https://github.com/massongit/write_please",
   "addons": [
     "heroku-postgresql:hobby-dev"
-  ]
+  ],
+  "buildpacks": [
+    "heroku/ruby"
+  ],
+  "scripts": {
+    "postdeploy": "bundle exec rake db:create db:migrate"
+  }
 }
