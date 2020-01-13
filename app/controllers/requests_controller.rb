@@ -22,6 +22,7 @@ class RequestsController < ApplicationController
   def new
     @request = Request.new
 
+    #validationで引っかかって戻された場合、入力されていた値を復元する
     begin
       @request.attributes = request_params
     rescue ActionController::ParameterMissing
@@ -40,6 +41,7 @@ class RequestsController < ApplicationController
   def edit
     @request = Request.find_by!(id: params[:id])
 
+    #validationで引っかかって戻された場合、入力されていた値を復元する
     begin
       @request.attributes = request_params
     rescue ActionController::ParameterMissing
@@ -79,7 +81,7 @@ class RequestsController < ApplicationController
 
   def request_params
     params
-      .require(:request)
-      .permit(:product_name, :description, :repository_url, :status)
+        .require(:request)
+        .permit(:product_name, :description, :repository_url, :status)
   end
 end
