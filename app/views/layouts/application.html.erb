@@ -40,17 +40,20 @@
       </ul>
     </div>
   </nav>
-  <% flash.each do |type, message| %>
-    <div class="alert alert-<%= case type
-                                when 'success', 'info', 'warning', 'danger'
-                                  type
-                                when 'alert'
-                                  'danger'
-                                else
-                                  'info'
-                                end %> mt-4">
-      <%= message %>
-    </div>
+  <% flash.each do |type, messages| %>
+    <% messages = [messages] unless messages.is_a?(Array) %>
+    <% messages.each do |message| %>
+      <div class="alert alert-<%= case type
+                                  when 'success', 'info', 'warning', 'danger'
+                                    type
+                                  when 'alert'
+                                    'danger'
+                                  else
+                                    'info'
+                                  end %> mt-4">
+        <%= message %>
+      </div>
+    <% end %>
   <% end %>
   <%= yield %>
 </div>

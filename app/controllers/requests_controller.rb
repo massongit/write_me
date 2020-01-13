@@ -9,12 +9,23 @@ class RequestsController < ApplicationController
 
   def create
     @request = Request.new(request_params)
-    @request.save!
-    redirect_to requests_path, success: t('.success_message')
+    begin
+      @request.save!
+      redirect_to requests_path, success: t('.success_message')
+    rescue => error
+      raise error if @request.errors.empty?
+      flash[:danger] = @request.errors.full_messages
+      redirect_to new_request_path(request: request_params)
+    end
   end
 
   def new
-    @request = Request.new
+    begin
+      @request = Request.new(request_params)
+    rescue ActionController::ParameterMissing
+      @request = Request.new
+    end
+
     render template: 'shared/_form',
            layout: 'application',
            locals: { request: @request,
