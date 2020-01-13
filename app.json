@@ -1,0 +1,14 @@
+{
+  "name": "write-please",
+  "description": "OSSへコミットしてみたい人とREADMEを記述して欲しいOSSの開発者を繋ぐサービス",
+  "keywords": [
+    "oss",
+    "readme",
+    "rails",
+    "ruby"
+  ],
+  "repository": "https://github.com/massongit/write_please",
+  "addons": [
+    "heroku-postgresql:hobby-dev"
+  ]
+}
