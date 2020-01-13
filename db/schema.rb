@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 2019_12_30_111732) do
     t.text "description"
     t.string "repository_url", null: false
     t.integer "status", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end
