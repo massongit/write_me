@@ -1,30 +1,32 @@
 <div class="card mt-4">
   <div class="card-header"><%= title %></div>
   <div class="card-body">
-    <% form_args_ = {class: 'form-control'}
-       form_args = form_args_.deep_dup
-       form_args[:readonly] = disabled %>
-    <% required_form_args = form_args.deep_dup
-       required_form_args[:required] = true %>
     <% columns = [:product_name, :repository_url, :description, :status]
        columns << :updated_at if show_updated_at %>
     <%= form_with model: request do |form| %>
       <% columns.each do |column| %>
         <div class="form-group">
+          <% form_args = {class: 'form-control'} %>
           <%= form.label column, Request.human_attribute_name(column) %>
-          <% case column %>
-          <% when :product_name %>
-            <%= form.text_field column, required_form_args %>
-          <% when :repository_url %>
-            <%= form.url_field column, required_form_args %>
-          <% when :description %>
-            <%= form.text_area column, form_args %>
-          <% when :status %>
-            <%= form.select column, Request.statuses_i18n.invert, {}, {disabled: disabled}.merge(form_args_) %>
-          <% when :updated_at %>
-            <%= form.text_field column, {value: l(request.updated_at)}.merge(form_args) %>
+          <% if column == :status %>
+            <%= form.select column, Request.statuses_i18n.invert, {}, {disabled: disabled}.merge(form_args) %>
           <% else %>
-            <%= form.text_field column, form_args %>
+            <% form_args[:readonly] = disabled %>
+            <% case column %>
+            <% when :product_name, :repository_url %>
+              <% form_args[:required] = true %>
+              <% if column == :product_name %>
+                <%= form.text_field column, form_args %>
+              <% else %>
+                <%= form.url_field column, form_args %>
+              <% end %>
+            <% when :description %>
+              <%= form.text_area column, form_args %>
+            <% when :updated_at %>
+              <%= form.text_field column, {value: l(request.updated_at)}.merge(form_args) %>
+            <% else %>
+              <%= form.text_field column, form_args %>
+            <% end %>
           <% end %>
         </div>
       <% end %>
