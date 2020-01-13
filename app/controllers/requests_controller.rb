@@ -20,10 +20,12 @@ class RequestsController < ApplicationController
   end
 
   def new
+    @request = Request.new
+
     begin
-      @request = Request.new(request_params)
+      @request.attributes = request_params
     rescue ActionController::ParameterMissing
-      @request = Request.new
+      # ignored
     end
 
     render template: 'shared/_form',
@@ -37,6 +39,13 @@ class RequestsController < ApplicationController
 
   def edit
     @request = Request.find_by!(id: params[:id])
+
+    begin
+      @request.attributes = request_params
+    rescue ActionController::ParameterMissing
+      # ignored
+    end
+
     render template: 'shared/_form',
            layout: 'application',
            locals: { request: @request,
@@ -52,8 +61,14 @@ class RequestsController < ApplicationController
 
   def update
     @request = Request.find_by!(id: params[:id])
-    @request.update!(request_params)
-    redirect_to requests_path, notice: t('.success_message')
+    begin
+      @request.update!(request_params)
+      redirect_to requests_path, notice: t('.success_message')
+    rescue => error
+      raise error if @request.errors.empty?
+      flash[:danger] = @request.errors.full_messages
+      redirect_to edit_request_path(id: params[:id], request: request_params)
+    end
   end
 
   def destroy
