@@ -6,6 +6,9 @@ OSSへコミットしてみたい人とREADMEを記述して欲しいOSSの開�
 ## Ruby version
 2.6.5
 
+## 対応ブラウザ
+[browserl.ist: A page to display compatible browsers from a browserslist string.](https://browserl.ist/?q=%3E+0.5%25%2C+%3E+0.5%25+in+JP%2C+last+2+versions%2C+Firefox+ESR%2C+not+dead)参照
+
 ## 開発環境構築方法
 1. 必要なライブラリをインストールします。
     ```sh
