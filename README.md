@@ -1,4 +1,4 @@
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/massongit/write_please)
 
 # write_please
 OSSへコミットしてみたい人とREADMEを記述して欲しいOSSの開発者を繋ぐサービス
