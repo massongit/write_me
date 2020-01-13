@@ -4,6 +4,8 @@
     <% form_args_ = {class: 'form-control'}
        form_args = form_args_.deep_dup
        form_args[:readonly] = disabled %>
+    <% required_form_args = form_args.deep_dup
+       required_form_args[:required] = true %>
     <% columns = [:product_name, :repository_url, :description, :status]
        columns << :updated_at if show_updated_at %>
     <%= form_with model: request do |form| %>
@@ -12,9 +14,9 @@
           <%= form.label column, Request.human_attribute_name(column) %>
           <% case column %>
           <% when :product_name %>
-            <%= form.text_field column, {required: true}.merge(form_args) %>
+            <%= form.text_field column, required_form_args %>
           <% when :repository_url %>
-            <%= form.url_field column, {required: true}.merge(form_args) %>
+            <%= form.url_field column, required_form_args %>
           <% when :description %>
             <%= form.text_area column, form_args %>
           <% when :status %>
