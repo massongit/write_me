@@ -11,7 +11,7 @@ class RequestsController < ApplicationController
     @request = Request.new(request_params)
     begin
       @request.save!
-      redirect_to requests_path, success: t('.success_message')
+      redirect_to root_path, success: t('.success_message')
     rescue => error
       raise error if @request.errors.empty?
       flash[:danger] = @request.errors.full_messages
@@ -63,7 +63,7 @@ class RequestsController < ApplicationController
     @request = Request.find_by!(id: params[:id])
     begin
       @request.update!(request_params)
-      redirect_to requests_path, notice: t('.success_message')
+      redirect_to root_path, notice: t('.success_message')
     rescue => error
       raise error if @request.errors.empty?
       flash[:danger] = @request.errors.full_messages
@@ -74,7 +74,7 @@ class RequestsController < ApplicationController
   def destroy
     @request = Request.find_by!(id: params[:id])
     @request.destroy!
-    redirect_to requests_path, notice: t('.success_message')
+    redirect_to root_path, notice: t('.success_message')
   end
 
   def request_params
