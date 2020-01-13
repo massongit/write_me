@@ -12,7 +12,9 @@
     "heroku-postgresql:hobby-dev"
   ],
   "buildpacks": [
-    "heroku/ruby"
+    {
+      "url": "heroku/ruby"
+    }
   ],
   "scripts": {
     "postdeploy": "bundle exec rake db:create db:migrate"
