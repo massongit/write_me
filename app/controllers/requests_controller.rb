@@ -10,7 +10,7 @@ class RequestsController < ApplicationController
   def create
     @request = Request.new(request_params)
     @request.save!
-    redirect_to '/requests', success: t('.success_message')
+    redirect_to requests_path, success: t('.success_message')
   end
 
   def new
@@ -42,13 +42,13 @@ class RequestsController < ApplicationController
   def update
     @request = Request.find_by!(id: params[:id])
     @request.update!(request_params)
-    redirect_to '/requests', notice: t('.success_message')
+    redirect_to requests_path, notice: t('.success_message')
   end
 
   def destroy
     @request = Request.find_by!(id: params[:id])
     @request.destroy!
-    redirect_to '/requests', notice: t('.success_message')
+    redirect_to requests_path, notice: t('.success_message')
   end
 
   def request_params
