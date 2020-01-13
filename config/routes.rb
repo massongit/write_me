@@ -2,7 +2,7 @@
 
 Rails.application.routes.draw do
   scope '(:locale)' do
-    get '/' => 'requests#index'
+    get '/' => 'requests#index', as: 'root'
     resources :requests
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
