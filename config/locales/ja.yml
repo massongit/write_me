@@ -53,7 +53,7 @@ ja:
       lang: 日本語
   requests:
     index:
-      lead_html: 「OSSにコミットしてみたいけど、どこから始めればよいかわからない......」<br/>そんな人はまずOSSのREADMEを記述するところから始めてみましょう！
+      lead: OSSへコミットしてみたい人とREADMEの記述を依頼したいOSSの開発者を繋ぐサービスです。
       title: 募集一覧
       details: 詳細
     create:

@@ -53,7 +53,7 @@ en:
       lang: English
   requests:
     index:
-      lead_html: '"I want to commit to OSS. But I don''t know how to start ..."<br/>If you think that, let''s start from writing the README of OSS!'
+      lead: This service connects those who want to commit to OSS and those who want to request to write a README.
       title: Request list
       details: Details
     create:
