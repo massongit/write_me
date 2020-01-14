@@ -53,7 +53,7 @@ ja:
       lang: 日本語
   requests:
     index:
-      lead: OSSへコミットしてみたい人とREADMEの記述を依頼したいOSSの開発者を繋ぐサービスです。
+      lead_html: OSSへコミットしてみたい人とREADMEの記述を依頼したいOSSの開発者を繋ぐサービスです。<br>READMEの記述を足がかりにOSSにコミットしていきましょう！
       title: 募集一覧
       details: 詳細
     create:
