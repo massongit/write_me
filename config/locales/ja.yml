@@ -49,7 +49,7 @@ ja:
         complated: 完了
   layouts:
     application:
-      title: Write Please!
+      title: Write Me!
       lang: 日本語
       contact_us: お問い合わせ
   requests:

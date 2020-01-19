@@ -49,7 +49,7 @@ en:
         complated: Complated
   layouts:
     application:
-      title: Write Please!
+      title: Write Me!
       lang: English
       contact_us: Contact Us
   requests:
