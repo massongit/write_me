@@ -1,6 +1,6 @@
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/massongit/write_please)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/massongit/write_me)
 
-# write_please
+# write_me
 OSSへコミットしてみたい人とREADMEを記述して欲しいOSSの開発者を繋ぐサービス
 
 ## Ruby version
