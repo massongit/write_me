@@ -51,6 +51,7 @@ ja:
     application:
       title: Write Please!
       lang: 日本語
+      contact_us: お問い合わせ
   requests:
     index:
       lead_html: OSSへコミットしてみたい人とREADMEの記述を依頼したいOSSの開発者を繋ぐサービスです。<br>READMEの記述を足がかりにOSSにコミットしていきましょう！

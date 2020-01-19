@@ -51,6 +51,7 @@ en:
     application:
       title: Write Please!
       lang: English
+      contact_us: Contact Us
   requests:
     index:
       lead_html: "This service connects those who want to commit to OSS and those who want to request to write a README.<br>Let's start committing to OSS from writing a README!"

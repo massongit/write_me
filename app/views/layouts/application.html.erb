@@ -17,6 +17,13 @@
 <div class="container">
   <nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top">
     <%= link_to t('.title'), url_for(controller: 'requests', action: 'index'), class: 'navbar-brand' %>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <%= link_to t('.contact_us'), 'https://twitter.com/poc_popoyama', class: 'nav-link active' %>
+        </li>
+      </ul>
+    </div>
     <div class="collapse navbar-collapse justify-content-end">
       <ul class="navbar-nav">
         <% I18n.available_locales.each do |lang| %>
