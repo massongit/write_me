@@ -9,6 +9,8 @@ OSSへコミットしてみたい人とREADMEを記述して欲しいOSSの開�
 ## 必要なソフトウェア・ライブラリ
 * rbenv
 * postgresql
+* Docker
+* docker-compose
 
 ## 対応ブラウザ
 [browserl.ist: A page to display compatible browsers from a browserslist string.](https://browserl.ist/?q=%3E+0.5%25%2C+%3E+0.5%25+in+JP%2C+last+2+versions%2C+Firefox+ESR%2C+not+dead)参照
