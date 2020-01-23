@@ -4,7 +4,7 @@ class RequestsController < ApplicationController
   add_flash_types :success, :info, :warning, :danger
 
   def index
-    @requests = Request.order(:status).order(updated_at: :desc).all
+    @requests = Request.page(params[:page]).order(:status).order(updated_at: :desc)
   end
 
   def create
@@ -31,11 +31,11 @@ class RequestsController < ApplicationController
 
     render template: 'shared/_form',
            layout: 'application',
-           locals: { request: @request,
-                     title: t('.title'),
-                     submit_text: t('.add'),
-                     disabled: false,
-                     show_updated_at: false }
+           locals: {request: @request,
+                    title: t('.title'),
+                    submit_text: t('.add'),
+                    disabled: false,
+                    show_updated_at: false}
   end
 
   def edit
@@ -50,11 +50,11 @@ class RequestsController < ApplicationController
 
     render template: 'shared/_form',
            layout: 'application',
-           locals: { request: @request,
-                     title: t('.title'),
-                     submit_text: t('.update'),
-                     disabled: false,
-                     show_updated_at: false }
+           locals: {request: @request,
+                    title: t('.title'),
+                    submit_text: t('.update'),
+                    disabled: false,
+                    show_updated_at: false}
   end
 
   def show
