@@ -4,7 +4,7 @@ class RequestsController < ApplicationController
   add_flash_types :success, :info, :warning, :danger
 
   def index
-    @requests = Request.page(params[:page]).order(:status).order(updated_at: :desc)
+    @requests = Request.order(:status).order(updated_at: :desc).page(params[:page])
   end
 
   def create
