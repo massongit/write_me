@@ -32,4 +32,9 @@ class ApplicationControllerTest < ActionDispatch::IntegrationTest
     get '/en'
     assert_equal I18n.locale, :en
   end
+
+  test 'set locale to en if locale is set to en in HTTP_ACCEPT_LANGUAGE' do
+    get '/', headers: {"Accept-Language" => "en-us, ja-jp"}
+    assert_equal I18n.locale, :en
+  end
 end
