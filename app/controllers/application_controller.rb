@@ -22,6 +22,7 @@ class ApplicationController < ActionController::Base
   # 環境変数HTTP_ACCEPT_LANGUAGEを順に検証し、最初に一致した有効なlocaleを返す
   def locale_in_accept_language
     i18n_languages = I18n.available_locales.map(&:to_s)
+
     request.env['HTTP_ACCEPT_LANGUAGE']
            .to_s
            .split(',')
@@ -30,6 +31,8 @@ class ApplicationController < ActionController::Base
         return i18n_lang if accept_lang.start_with?(i18n_lang)
       end
     end
+
+    nil
   end
 
   def default_url_options(options = {})
