@@ -48,6 +48,15 @@ gem 'dotenv-rails', '~> 2.7.5'
 
 gem 'kaminari', '~> 1.1.1'
 
+gem 'devise', '~> 4.7.0'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
+
+gem 'omniauth', '~> 1.9.0'
+gem 'omniauth-github', '~> 1.3.0'
+
+gem 'minitest-reporters'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
