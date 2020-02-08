@@ -17,7 +17,7 @@ class RequestsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should post create' do
     post requests_url, params: {request: @one.attributes}
-    assert_redirected_to root_path(locale: :en)
+    assert_redirected_to root_path(locale: 'en')
   end
 
   test 'should get new' do
@@ -37,16 +37,16 @@ class RequestsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should patch update' do
     patch request_url(id: @one.id), params: {request: @one.attributes}
-    assert_redirected_to root_path(locale: :en)
+    assert_redirected_to root_path(locale: 'en')
   end
 
   test 'should put update' do
     put request_url(id: @one.id), params: {request: @one.attributes}
-    assert_redirected_to root_path(locale: :en)
+    assert_redirected_to root_path(locale: 'en')
   end
 
   test 'should delete destroy' do
     delete request_url(id: @one.id)
-    assert_redirected_to root_path(locale: :en)
+    assert_redirected_to root_path(locale: 'en')
   end
 end
