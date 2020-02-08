@@ -23,12 +23,12 @@ class ApplicationControllerTest < ActionDispatch::IntegrationTest
     assert_equal I18n.locale, :ja
   end
 
-  test 'set locale to en if locale is specified in params' do
+  test 'set locale to en if locale is set to en in params' do
     get root_path, params: {locale: 'en'}
     assert_equal I18n.locale, :en
   end
 
-  test 'set locale to en if locale is specified in path' do
+  test 'set locale to en if locale is set to en in path' do
     get '/en'
     assert_equal I18n.locale, :en
   end
