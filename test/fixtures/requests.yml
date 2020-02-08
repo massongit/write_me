@@ -4,10 +4,10 @@ one:
   product_name: MyString
   description: MyText
   repository_url: MyString
-  is_created: false
+  status: 0
 
 two:
   product_name: MyString
   description: MyText
   repository_url: MyString
-  is_created: false
+  status: 0
