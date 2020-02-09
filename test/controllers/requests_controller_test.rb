@@ -5,7 +5,7 @@ require 'test_helper'
 class RequestsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @one = requests(:one)
-    @locale='en'
+    @locale = 'en'
   end
 
   test 'should get index' do
