@@ -3,8 +3,6 @@
 require 'test_helper'
 
 class RequestsControllerTest < ActionDispatch::IntegrationTest
-  fixtures :requests
-
   setup do
     @one = requests(:one)
     @one.save!
