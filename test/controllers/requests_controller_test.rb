@@ -5,8 +5,6 @@ require 'test_helper'
 class RequestsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @one = requests(:one)
-    @one.save!
-
     @locale='en'
   end
 
