@@ -14,3 +14,5 @@ update_configs:
     allowed_updates:
       - match:
           update_type: "security"
+    default_reviewers:
+      - "massongit"
