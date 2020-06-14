@@ -1,4 +1,3 @@
-[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=massongit/write_me)](https://dependabot.com)  
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/massongit/write_me)
 
 ![](screenshot.png)
